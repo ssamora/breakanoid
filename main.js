@@ -13,18 +13,16 @@ game.start();
 
 function gameLoop(timestamp) {
 
-    let dt = (timestamp - lastTime) ;    
+    let dt = (timestamp - lastTime) / 1000 ;    
     
 
     let fps = Math.round(1 / dt);
 
-    if( dt > 1000/60 ) {
-        lastTime = timestamp - ((timestamp - lastTime)%(1000/60));
-        game.update(dt);
-        
-        game.draw(ctx);
-        
-    }
+    
+    lastTime = timestamp - lastTime;
+    game.update(dt);
+    game.draw(ctx);
+    
 
     requestAnimationFrame(gameLoop);
 

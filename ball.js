@@ -11,7 +11,7 @@ export default class Ball {
             x: game.width / 2 - this.radius,
             y: game.height / 2 - this.radius,
         };
-        this.constSpeed = 0.09;
+        this.constSpeed = 10;
         this.speed = {
             x: this.constSpeed,
             y: this.constSpeed
@@ -41,8 +41,6 @@ export default class Ball {
     isMovingDown() {
         return this.speed.y > 0;
     }
-
-
 
     update(dt) {
 
