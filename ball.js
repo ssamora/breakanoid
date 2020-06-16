@@ -11,7 +11,7 @@ export default class Ball {
             x: game.width / 2 - this.radius,
             y: game.height / 2 - this.radius,
         };
-        this.constSpeed = 10;
+        this.constSpeed = 140;
         this.speed = {
             x: this.constSpeed,
             y: this.constSpeed
@@ -52,6 +52,7 @@ export default class Ball {
             this.speed.y = -this.speed.y;
         }
 
+        console.log(dt);
         this.position.x += this.speed.x * dt;
         this.position.y += this.speed.y * dt;
 

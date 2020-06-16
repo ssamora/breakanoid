@@ -14,26 +14,12 @@ game.start();
 function gameLoop(timestamp) {
 
     let dt = (timestamp - lastTime) / 1000 ;    
+    lastTime = timestamp;// - lastTime;
     
-
-    let fps = Math.round(1 / dt);
-
-    
-    lastTime = timestamp - lastTime;
     game.update(dt);
     game.draw(ctx);
-    
-
     requestAnimationFrame(gameLoop);
 
-    
-    
-    if(fps == 60)
-        ctx.fillText("FPS: " + fps, 10, 90);
-    else
-        ctx.fillText("FPS: " + fps, 10, 180);
-
-    
 }
 
 requestAnimationFrame(gameLoop);
